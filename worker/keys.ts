@@ -1,11 +1,11 @@
-interface IKeys {
+type IKeys = {
 	redisHost: string;
-	redisPort: number;
-}
+	redisPort: string;
+};
 
 const keys: IKeys = {
-	redisHost: process.env.REDIS_HOST || "",
-	redisPort: process.env.REDIS_PORT ? parseInt(process.env.REDIS_PORT) : 0,
+	redisHost: process.env.REDIS_HOST,
+	redisPort: process.env.REDIS_PORT,
 };
 
 export default keys;
