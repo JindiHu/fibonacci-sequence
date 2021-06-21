@@ -14,7 +14,7 @@ const fib = (index: number): number => {
 	return fib(index - 1) + fib(index - 2);
 };
 
-subscriber.on("message", (channel, message) => {
+subscriber.on("message", (channel: any, message: any) => {
 	publisher.hmset("values", message, fib(parseInt(message)));
 });
 
