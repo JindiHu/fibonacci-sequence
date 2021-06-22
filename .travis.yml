@@ -9,15 +9,15 @@ script:
   - docker run -e CI=true fib-seq/client-test yarn test --coverage
 
 after_success:
-  - docker build -t fib-seq/client ./client
-  - docker build -t fib-seq/nginx ./nginx
-  - docker build -t fib-seq/server ./server
-  - docker build -t fib-seq/worker ./worker
+  - docker build -t hujindi1212/fib-seq-client ./client
+  - docker build -t hujindi1212/fib-seq-nginx ./nginx
+  - docker build -t hujindi1212/fib-seq-server ./server
+  - docker build -t hujindi1212/fib-seq-worker ./worker
   # Log in to the dokcer CLI
   # grab the env stored travis
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # Take those images and push them to docker hub
-  - docker push fib-seq/client
-  - docker push fib-seq/nginx
-  - docker push fib-seq/server
-  - docker push fib-seq/worker
+  - docker push hujindi1212/fib-seq-client
+  - docker push hujindi1212/fib-seq-nginx
+  - docker push hujindi1212/fib-seq-server
+  - docker push hujindi1212/fib-seq-worker
