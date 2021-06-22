@@ -15,7 +15,7 @@ const fib = (index: number): number => {
 };
 
 subscriber.on("message", (channel: any, message: any) => {
-	publisher.hmset("values", message, fib(parseInt(message)));
+	publisher.hset("values", message, fib(parseInt(message)));
 });
 
 subscriber.subscribe("insert");
