@@ -8,6 +8,8 @@
   },
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon"
+    "dev": "nodemon",
+    "dev:build": "make dev_build",
+    "dev:start": "make dev_start"
   }
 }

@@ -1,5 +1,5 @@
 DOCKER_NAMESPACE=fib-seq
-IMAGE_NAME=client
+IMAGE_NAME=server
 VERSION=latest
 
 

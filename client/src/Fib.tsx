@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import axios from "axios";
 
 const Fib = () => {
@@ -9,7 +9,7 @@ const Fib = () => {
 	useEffect(() => {
 		fetchValues();
 		fetchIndexes();
-	}, []);
+	}, [index]);
 
 	const fetchValues = async () => {
 		const _values = await axios.get("/api/values/current");
@@ -30,18 +30,18 @@ const Fib = () => {
 	};
 
 	const renderSeenIndexes = () => {
-		return seenIndexes.map((n: number): number => n).join(", ");
+		return seenIndexes.map(({ number }: any): number => number).join(", ");
 	};
 
-	const renderValues = () => {
-		return Object.entries(values).map((key, value) => {
+	const renderValues = useCallback(() => {
+		return Object.entries(values).map(([key, value]) => {
 			return (
-				<div>
-					For index {key} i calculated{value}
+				<div key={key}>
+					For index {key} i calculated {value}
 				</div>
 			);
 		});
-	};
+	}, [values]);
 
 	return (
 		<div>
@@ -57,7 +57,6 @@ const Fib = () => {
 			</form>
 			<h3>Indexes i have seen:</h3>
 			{renderSeenIndexes()}
-
 			<h3>Calculated values:</h3>
 			{renderValues()}
 		</div>
