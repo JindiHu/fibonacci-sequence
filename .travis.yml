@@ -15,7 +15,7 @@ after_success:
   - docker build -t fib-seq/worker ./worker
   # Log in to the dokcer CLI
   # grab the env stored travis
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DCOKER_ID" --password-stdin
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # Take those images and push them to docker hub
   - docker push fib-seq/client
   - docker push fib-seq/nginx
