@@ -1,4 +1,4 @@
-FROM node:14.17.1alpine
+FROM node:14.17.1-1alpine
 WORKDIR /app
 COPY ./package.json .
 RUN yarn install
