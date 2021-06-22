@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 
 const Fib = () => {
@@ -37,7 +37,7 @@ const Fib = () => {
 		return Object.entries(values).map((key, value) => {
 			return (
 				<div>
-					For index {key} i calculated {value}
+					For index {key} i calculated{value}
 				</div>
 			);
 		});
