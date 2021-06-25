@@ -65,5 +65,5 @@ app.post("/values", async (req, res) => {
 });
 
 app.listen(5000, (err) => {
-	console.log("API listening");
+	console.log("API listening on 5000");
 });
