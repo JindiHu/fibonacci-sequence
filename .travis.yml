@@ -22,3 +22,16 @@ after_success:
   - docker push hujindi1212/fib-seq-server
   - docker push hujindi1212/fib-seq-worker
 
+### deployment script
+# deploy:
+#   provider: elasticbeanstalk
+#   region: us-east-1
+#   app: fib-seq # refers to the beanstalk path in aws console
+#   env: FibSeq-env # refers to the beanstalk path in aws console
+#   bucket_name: easticbeanstalk-us-east-1-blabla # s3 buck in the same region
+#   bucket_path: fib-seq
+#   on: 
+#     branch: master
+#   access_key_id: $AWS_ACCESS_KEY # in travis env setting
+#   secret_access_key:
+#     secure: $AWS_SECRET_KEY # in travis env setting
